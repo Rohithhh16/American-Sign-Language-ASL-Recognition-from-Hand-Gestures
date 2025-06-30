@@ -1,4 +1,4 @@
-![ASL Project Banner](asl_img.png)
+![ASL Project Banner](asl_image.png)
 # 🧠 American Sign Language (ASL) Recognition from Hand Gestures
 
 A real-time, production-inspired deep learning application for recognizing American Sign Language (ASL) from hand gestures using optimized video processing, object detection, and image classification. Developed in a **version-based modular pipeline**, this project demonstrates how to build, optimize, and deploy a scalable gesture recognition system that can be adapted for real-world use cases like accessibility tools, education, and human-computer interaction.
