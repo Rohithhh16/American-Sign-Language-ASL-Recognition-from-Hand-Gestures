@@ -1,0 +1,35 @@
+Step1: Create an environment by using conda create -n <desired_name> python=3.11.13
+Step2: Activate the environment
+Step3: pip install -r requirements.txt
+Step4: python run.py
+
+
+Version1: basic skeleton pipeline with instance attributes imgclspath,sourcepath 
+and instance methods load_objectdetection_model (loads the object detection model) and
+load_imageclassification_model (loads the image classification model) process_video (which only loads the video)
+run this will activate all the instance methods in the given classification
+
+Version2: everything is same like version1 but we will be connecting objectdetection model
+to process_video. we were able to connect object detection algorithm and video
+because of this latency has been introduced in the inference video
+
+we should understand from where this latency is being introduced
+loading the model,loading frame into the model, printing the output : I/O operations
+
+Version3: Optimization of Version2 Code
+* we have downsampled the frame shape by half and then we have passed it to model
+* we have converted the downsampled frame to grayscale and then we have passed it to model
+* we have changed the fps of the video to 15
+
+Version4
+ 
+as we have optimized code now we will have to integrate image classification algorithm to the exisitng code
+small latency is introduced into the code now this is because of the image classification algorithm
+now only way here to reduce the latency --> quantize the imgclassification model to .tflite
+convert the weights to float16
+
+
+Version5
+
+now we will have to map the class index that we are getting from image classification_model predictions 
+to the database that we have
