@@ -6,15 +6,15 @@ from tensorflow import keras
 import cv2
 import json
 import mediapipe as mp
-from tensorflow.keras.applications.efficientnet import preprocess_input # type: ignore
-from tensorflow.keras.models import load_model # type: ignore
+from tensorflow.keras.applications.efficientnet import preprocess_input
+from tensorflow.keras.models import load_model 
 
 
 class pipeline:
 
     def __init__(self,imgcls_path,source_path):
-        self.imgcls_path = imgcls_path # path to image classification algorithm
-        self.source_path = source_path # path to the source (video)
+        self.imgcls_path = imgcls_path 
+        self.source_path = source_path 
 
 
     # loading object detection model
@@ -24,7 +24,6 @@ class pipeline:
                        max_num_hands=2,
                        min_detection_confidence=0.7)
         print("object detection model has been loaded successfully")
-        print(tensorflow.__version__)
         return hand
     
     # loading image classificaiton model
