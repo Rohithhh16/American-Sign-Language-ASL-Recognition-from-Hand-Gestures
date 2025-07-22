@@ -73,7 +73,7 @@ class pipeline:
                         hand_crop = cv2.flip(hand_crop,1)
                         resized = cv2.resize(hand_crop, (224, 224))
                         normalized = resized / 255.0
-                        input_img = np.expand_dims(normalized, axis=0).astype(np.float32)
+                        input_img = np.expand_dims(normalized, axis=0).astype(np.float16)
                         imgclsmodel.set_tensor(input_index, input_img)
                         imgclsmodel.invoke()
                         predictions = imgclsmodel.get_tensor(output_index)
